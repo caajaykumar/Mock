@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('your-background-image.jpg') no-repeat center center / cover;
+  color: #333;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+}
+
+.hero-section {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 20px;
+  position: relative;
+}
+
+.hero-content h1,
+.hero-content h2,
+.hero-content h3 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.features {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.features li {
+  margin-bottom: 10px;
+}
+
+.circle-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #4c63d2;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.help-text {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+.contact-btn {
+  background: #d4a574;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.form-section {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form input,
+.form select,
+.form textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+
+.form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #fff;
+  color: #000;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* Desktop View */
+@media (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .hero-section,
+  .form-section {
+    flex: 1;
+  }
+
+  .circle-badge {
+    top: 40px;
+    right: 40px;
+    width: 150px;
+    height: 150px;
+    font-size: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .hero-content h2,
+  .hero-content h3 {
+    font-size: 3rem;
+  }
+}
