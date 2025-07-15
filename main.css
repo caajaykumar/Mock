@@ -1,0 +1,509 @@
+/* Base styles - Mobile First */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f0f2f5; /* Light grey background for the whole page */
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start; /* Align items to the top for scrolling */
+    justify-content: center;
+    padding: 20px 15px; /* Added horizontal padding for smaller screens */
+    line-height: 1.5;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 450px; /* Limit max width for mobile-like appearance */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 25px; /* Spacing between main sections */
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacks inner sections */
+    gap: 25px; /* Spacing between info, hero, and form */
+}
+
+/* 1. Info Section (First on Mobile) */
+.info-section {
+    background: #f4e6da; /* Light orange/cream background */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    order: 1; /* Ensures it appears first on mobile */
+    color: #333;
+    /* On mobile, let content define height */
+    height: auto;
+    min-height: unset; /* Ensure no inherited min-height interferes */
+}
+
+.info-title {
+    color: #4a148c; /* Dark purple */
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.info-text {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.info-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.info-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.info-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #4a148c;
+    font-weight: bold;
+}
+
+
+/* 2. Hero/Card Section (Second on Mobile) */
+.hero-container {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    order: 2; /* Ensures it appears second on mobile */
+    min-height: 400px; /* Give it some base height */
+}
+
+.card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Light gradient */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Positioned relative to hero-container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push content to top and button to bottom */
+    z-index: 2; /* Above the background pseudo-element */
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.header-text {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: right;
+    line-height: 1.3;
+    z-index: 3;
+}
+
+.logo-background {
+    position: absolute;
+    top: 25%; /* Adjusted for mobile view */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centered */
+    width: 130px; /* Smaller for mobile */
+    height: 130px; /* Smaller for mobile */
+    background: linear-gradient(135deg, #4c63d2 0%, #5a67d8 25%, #667eea 50%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Below text content */
+}
+
+.logo-text {
+    font-size: 1rem; /* Smaller text */
+    font-weight: 800;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 1.2;
+    transform: rotate(0deg); /* No rotation on mobile for readability */
+}
+
+.card-content {
+    position: relative; /* Changed to relative for flow */
+    margin-top: 100px; /* Space for the logo at the top */
+    padding: 10px 0;
+    background-color: #f4e6da69; /* Slightly transparent background */
+    border-radius: 8px;
+    z-index: 3;
+}
+
+.main-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 3px;
+    line-height: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle, .third-line {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #4a5568;
+    margin-bottom: 3px;
+    line-height: 1;
+}
+
+.features {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.feature-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon.shield { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.feature-icon.check { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+.feature-icon.money { background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%); }
+
+
+.contact-button {
+    background: linear-gradient(135deg, #d4a574 0%, #b8956a 100%); /* Gold/Brown gradient */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%; /* Full width button on mobile */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Space below content */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 3; /* Above pseudo-element */
+}
+.contact-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.contact-button::after {
+    content: '>';
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* 3. Form Section (Third on Mobile) */
+.form-section {
+    background: #4465a3bf; /* Semi-transparent blue */
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    order: 3; /* Ensures it appears third on mobile */
+    color: white;
+}
+
+.form-title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for all inputs on mobile */
+    gap: 15px; /* Spacing between form groups */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: span 1; /* Still single column */
+}
+
+.form-label {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-select option {
+    background: #3f51b5; /* Darker blue for options */
+    color: white;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit; /* Inherit font from body */
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.checkbox-input {
+    margin-top: 3px;
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+}
+
+.checkbox-label {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    opacity: 0.9;
+}
+
+.checkbox-label a {
+    color: #ffeb3b; /* Yellow link color */
+    text-decoration: underline;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #333;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Media Queries for larger screens (Tablet and Desktop) --- */
+
+/* Tablet (min-width: 768px) */
+@media (min-width: 768px) {
+    body {
+        padding: 40px 20px;
+        align-items: center; /* Center content vertically on larger screens */
+    }
+
+    .main-wrapper {
+        flex-direction: row; /* Layout content horizontally */
+        justify-content: center;
+        max-width: 1300px; /* Max width for desktop */
+        gap: 40px; /* More spacing on desktop */
+    }
+
+    .content-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap; /* Allow wrapping if content exceeds width */
+        gap: 40px; /* Spacing between main sections */
+    }
+
+    /* Reset order for larger screens */
+    .info-section,
+    .hero-container,
+    .form-section {
+        order: initial; /* Resetting here means it follows HTML order if no specific order is set */
+    }
+
+    .hero-container {
+        max-width: 600px; /* Constrain width for hero section */
+        flex-shrink: 0; /* Prevent shrinking */
+        min-height: 360px; /* Adjust height for tablet */
+        flex-basis: 50%; /* Take half the width initially */
+    }
+
+    .form-section {
+        flex: 1; /* Allow form section to grow and take remaining space */
+        max-width: 500px; /* Max width for form section */
+        padding: 30px;
+    }
+
+    .info-section {
+        flex-basis: 100%; /* Take full width above other sections */
+        max-width: 600px; /* Align with hero container's width */
+        order: 2; /* Explicitly set order for desktop view to be at the bottom of the left column */
+        margin-top: 40px; /* Add space between form/card and info on desktop */
+        height: 180px; /* Set a fixed height for info section on larger screens */
+        overflow: hidden; /* Hide overflow if content exceeds fixed height */
+    }
+
+
+    /* Card specific adjustments for tablet */
+    .card {
+        padding: 30px;
+    }
+
+    .header-text {
+        font-size: 0.9rem;
+        right: 30px;
+    }
+
+    .logo-background {
+        width: 200px;
+        height: 200px;
+        top: 50%; /* Center vertically again */
+        left: auto; /* Remove left positioning */
+        right: 220px; /* Position to the right as in original design */
+        transform: translateY(-50%); /* Only vertical centering needed */
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+        transform: rotate(-20deg); /* Re-apply rotation */
+    }
+
+    .card-content {
+        position: absolute; /* Revert to absolute positioning */
+        left: 20px;
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%);
+        margin-top: 0; /* Remove top margin */
+        width: 45%; /* Adjust width */
+        padding: 15px;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .subtitle, .third-line {
+        font-size: 2.5rem;
+    }
+
+    .features {
+        margin-top: 30px;
+        gap: 15px;
+    }
+
+    .feature-item {
+        font-size: 1rem;
+    }
+
+    .feature-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+
+    .contact-button {
+        position: absolute; /* Revert to absolute positioning */
+        bottom: 30px;
+        right: 30px;
+        width: auto; /* Auto width */
+        padding: 15px 30px;
+        font-size: 1rem;
+        margin-top: 0; /* Remove margin */
+    }
+
+    /* Form specific adjustments for tablet */
+    .form-title {
+        font-size: 2rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for inputs */
+        gap: 20px;
+    }
+
+    .form-group.full-width {
+        grid-column: span 2; /* Full width for textarea */
+    }
+}
+
+/* Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+    /* No major changes needed here beyond tablet, as the layout holds */
+    .logo-background {
+        right: 220px; /* Keep consistent with tablet/desktop */
+    }
+    .hero-container {
+        max-height: 350px;
+    }
+}

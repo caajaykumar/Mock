@@ -1,0 +1,139 @@
+/* Custom styles */
+body {
+    background-color: #f0f2f5; /* Light grey background for the whole page */
+}
+
+/* Info Section specific colors */
+.info-section .info-title {
+    color: #4a148c; /* Dark purple */
+}
+.info-section .info-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.info-section .info-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #4a148c; /* Dark purple bullet */
+    font-weight: bold;
+}
+
+/* Form Section specific colors */
+.form-section {
+    background-color: rgba(68, 101, 163, 0.75); /* Semi-transparent blue */
+    color: white;
+}
+
+.form-section .form-label {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.form-section .form-control,
+.form-section .form-select,
+.form-section .form-textarea {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+.form-section .form-control::placeholder,
+.form-section .form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.form-section .form-control:focus,
+.form-section .form-select:focus,
+.form-section .form-textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: white;
+    box-shadow: none; /* Override Bootstrap focus shadow if needed */
+}
+
+.form-section .form-select option {
+    background-color: #3f51b5; /* Darker blue for options */
+    color: white;
+}
+
+.form-section .form-check-label {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    opacity: 0.9;
+}
+.form-section .form-check-input:checked {
+    background-color: #ffeb3b; /* Yellow for checked checkbox */
+    border-color: #ffeb3b;
+}
+
+/* Card specific styles (adjust as needed if Bootstrap utilities aren't enough) */
+.hero-container .card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.hero-container .card-body {
+    /* For finer control over logo position if needed */
+}
+
+/* Ensure the hero-container maintains height */
+@media (max-width: 767.98px) {
+    .hero-container {
+        min-height: 400px; /* Keep a minimum height for the card on mobile */
+    }
+    .hero-container .logo-background {
+        top: 25%; /* Adjust top for mobile */
+        transform: translate(-50%, -50%);
+        right: auto;
+    }
+    .hero-container .logo-text {
+        transform: rotate(0deg); /* No rotation on mobile */
+    }
+    .hero-container .card-content {
+        position: relative; /* Revert to relative */
+        margin-top: 100px; /* Space for logo */
+        left: auto;
+        top: auto;
+        transform: none;
+        width: auto;
+    }
+    .hero-container .contact-button {
+        position: relative; /* Revert to relative */
+        bottom: auto;
+        right: auto;
+        margin: 20px auto 0 auto; /* Center button on mobile */
+        width: 100%;
+    }
+}
+
+
+/* Desktop/Tablet adjustments for elements within Hero Card */
+@media (min-width: 768px) {
+    .hero-container .logo-background {
+        top: 50%; /* Center vertically */
+        right: 220px; /* Position to the right as in original design */
+        left: auto;
+        transform: translateY(-50%); /* Only vertical centering needed */
+    }
+    .hero-container .logo-text {
+        transform: rotate(-20deg); /* Re-apply rotation */
+    }
+    .hero-container .card-content {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 45%;
+    }
+    .hero-container .contact-button {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: auto;
+    }
+    .info-section {
+        min-height: 180px; /* Fixed height for info section on larger screens */
+        max-height: 180px;
+        overflow: hidden; /* Hide overflow if content exceeds fixed height */
+    }
+}

@@ -3,137 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Case Review</title>
-    <link href="/style.css" rel="stylesheet" type="text/css"/>
-   
+    <title>Mobile First Layout with Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="main-wrapper">
-  <div class="content-wrapper">
-    <!-- Left Section -->
-    <div class="hero-container">
-      <div class="card">
-        <div class="header-text">
-          We are here<br>to help!
-        </div>
+    <div class="container ">
+        <div class="row g-4  justify-content-center">
 
-        <!-- Circle Badge -->
-        <div class="logo-background">
-          <div class="logo-text">ONLY 6 SLOTS<br>LEFT</div>
-        </div>
+            <div class="col-12 col-md-6 col-lg-5  order-md-first d-flex flex-column g-4">
+                <div class="hero-container position-relative mb-4" style="min-height: 350px;">
+                    <div class="card bg-gradient-light border-0 shadow-lg  position-absolute w-100 rounded-4 overflow-hidden">
+                        <div class="card-body p-4 d-flex flex-column justify-content-between position-relative z-1">
+                            <div class="header-text text-end position-absolute top-0 end-0 p-3 pt-4 pe-4 text-secondary">
+                                We are here<br>to help!
+                            </div>
 
-        <div class="card-content">
-          <h1 class="main-title">Free</h1>
-          <h2 class="subtitle">Case</h2>
-          <h3 class="third-line">Review</h3>
+                            <div class="logo-background position-absolute top-50 start-50 translate-middle rounded-circle shadow-lg" style="width:150px; height: 150px; background: linear-gradient(135deg, #4c63d2 0%, #5a67d8 25%, #667eea 50%, #764ba2 100%); z-index: 1;">
+                                <div class="logo-text text-white fw-bold text-center position-absolute top-50 start-50 translate-middle" style="font-size: 1.1rem; line-height: 1.2; transform: rotate(-20deg);">
+                                    ONLY 6<br>SLOTS<br>LEFT
+                                </div>
+                            </div>
 
-          <div class="features">
-            <div class="feature-item">
-              <div class="feature-icon shield">🛡</div>
-              <span>100% Confidential</span>
+                            <div class="card-content mt-auto p-3 rounded-3" style="background-color: rgba(244, 230, 218, 0.4); position: relative; z-index: 2;">
+                                <h1 class="display-5 fw-bold text-dark mb-1 lh-1">Free</h1>
+                                <h2 class="h2 fw-normal text-secondary mb-1 lh-1">Case</h2>
+                                <h3 class="h3 fw-normal text-secondary lh-1">Review</h3>
+
+                                <div class="features mt-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="feature-icon rounded-circle me-2 d-flex align-items-center justify-content-center shadow-sm" style="width: 24px; height: 24px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                                        <span class="text-dark fw-medium">100% Confidential</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="feature-icon rounded-circle me-2 d-flex align-items-center justify-content-center shadow-sm" style="width: 24px; height: 24px; background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);"></div>
+                                        <span class="text-dark fw-medium">No Win, No Fee</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="feature-icon rounded-circle me-2 d-flex align-items-center justify-content-center shadow-sm" style="width: 24px; height: 24px; background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);"></div>
+                                        <span class="text-dark fw-medium">Free Case Evaluation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="contact-button btn btn-lg rounded-pill shadow position-absolute bottom-0 end-0 m-4" style="background: linear-gradient(135deg, #d4a574 0%, #b8956a 100%); color: white; z-index: 2;">
+                            Contact us 
+                        </button>
+                    </div>
+                </div>
+
+                <div class="info-section p-4 rounded-4 shadow" style="background-color: #f4e6da;  max-height: 270px; overflow: hidden; margin-bottom: 10px;">
+                    <h3 class="info-title text-purple mb-3">Have you or a loved one been affected by Mesothelioma?</h3>
+                    <p class="info-text small mb-2">
+                        As a woman, you've carried the weight of care, love, and resilience. Now it's time someone stands with you.
+                    </p>
+                    <ul class="info-list ps-3 small">
+                        <li>Secondary Asbestos exposure is common</li>
+                        <li>Misdiagnosis delays are more frequent in women</li>
+                        <li>Women have won significant legal settlements</li>
+                    </ul>
+                </div>
             </div>
-            <div class="feature-item">
-              <div class="feature-icon check">✓</div>
-              <span>No Win, No Fee</span>
+
+            <div class="col-12 col-md-6 col-lg-5 order-md-last ">
+                <div class="form-section  rounded-4 shadow-lg">
+                    <h2 class="form-title text-left">Claim Form</h2>
+
+                    <div class="row g-3 ">
+                        <div class="col-12 col-sm-6">
+                            <label for="firstName" class="form-label">First Name *</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="lastName" class="form-label">Last Name *</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="email" class="form-label">Email ID *</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="dob" class="form-label">Date of birth *</label>
+                            <input type="date" class="form-control" id="dob" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="jobTitle" class="form-label">Job Title*</label>
+                            <input type="text" class="form-control" id="jobTitle" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="diagnosisDate" class="form-label">Date of Diagnosis*</label>
+                            <input type="date" class="form-control" id="diagnosisDate" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="diagnosisType" class="form-label">Type of Diagnosis*</label>
+                            <select class="form-select" id="diagnosisType" required>
+                                <option selected disabled value="">Select diagnosis type</option>
+                                <option value="type1">Type 1</option>
+                                <option value="type2">Type 2</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="yourStory" class="form-label">Tell us your story (optional)</label>
+                            <textarea class="form-control" id="yourStory" rows="2" placeholder="Please describe your situation..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="privacyConsent" required>
+                        <label class="form-check-label text-white" for="privacyConsent">
+                            I agree to the <a href="#" class="text-warning text-decoration-underline">privacy policy</a> and disclaimer and give my express written consent to be contacted regarding my case options.
+                        </label>
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="humanVerify" required>
+                        <label class="form-check-label text-white" for="humanVerify">
+                            Please check this box to verify you're a person.
+                        </label>
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-light btn-lg rounded-pill shadow">Start your claim now</button>
+                    </div>
+                </div>
             </div>
-            <div class="feature-item">
-              <div class="feature-icon money">💰</div>
-              <span>Free Case Evaluation</span>
-            </div>
-          </div>
+
         </div>
-
-        <button class="contact-button">Contact us</button>
-      </div>
-
-        <!-- Bottom Section -->
-  <div class="info-section">
-    <h3 class="info-title">Have you or a loved one been affected by Mesothelioma?</h3>
-    <p class="info-text">As a woman, you've carried the weight of care, love, and resilience. Now it's time someone stands with you.</p>
-    <ul class="info-list">
-      <li>Secondary Asbestos exposure is common</li>
-      <li>Misdiagnosis delays are more frequent in women</li>
-      <li>Women have won significant legal settlements</li>
-    </ul>
-  </div>
     </div>
 
-    <!-- Right Section -->
-    <div class="form-section">
-      <h2 class="form-title">Claim Form</h2>
-
-      <div class="form-grid">
-        <div class="form-group">
-          <label class="form-label">First Name *</label>
-          <input type="text" class="form-input" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Last Name *</label>
-          <input type="text" class="form-input" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Phone Number *</label>
-          <input type="tel" class="form-input" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Email ID *</label>
-          <input type="email" class="form-input" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Date of birth *</label>
-          <input type="date" class="form-input" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Job Title*</label>
-          <input type="text" class="form-input" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Date of Diagnosis*</label>
-          <input type="date" class="form-input" required />
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Type of Diagnosis*</label>
-          <select class="form-select" required>
-            <option value="">Select diagnosis type</option>
-            <option value="pleural">Pleural Mesothelioma</option>
-            <option value="peritoneal">Peritoneal Mesothelioma</option>
-            <option value="pericardial">Pericardial Mesothelioma</option>
-            <option value="testicular">Testicular Mesothelioma</option>
-          </select>
-        </div>
-
-        <div class="form-group full-width">
-          <label class="form-label">Tell us your story (optional)</label>
-          <textarea class="form-textarea" placeholder="Please describe your situation and how you were exposed to asbestos..."></textarea>
-        </div>
-      </div>
-
-      <div class="checkbox-group">
-        <input type="checkbox" class="checkbox-input" id="privacy" required />
-        <label for="privacy" class="checkbox-label">
-          I agree to the <a href="#">privacy policy</a> and disclaimer and give my express written consent to be contacted regarding my case options.
-        </label>
-      </div>
-
-      <div class="checkbox-group">
-        <input type="checkbox" class="checkbox-input" id="verify" required />
-        <label for="verify" class="checkbox-label">
-          Please check this box to verify you're a person.
-        </label>
-      </div>
-
-      <button type="submit" class="submit-btn">Start your claim now</button>
-    </div>
-  </div>
-
-
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
